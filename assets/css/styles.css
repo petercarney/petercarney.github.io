@@ -1,0 +1,282 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	background:url('../img/background_tile.jpg') #161718;
+}
+
+body{
+	background:url('../img/background.jpg') no-repeat center center;
+	min-height: 490px;
+    padding: 200px 0 0;
+	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#5a4099;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+section, footer{
+	display: block;
+}
+
+
+/*----------------------------
+	Styling the forms
+-----------------------------*/
+
+
+#formContainer{
+	width:460px;
+	height:240px;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+	
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+}
+
+#formContainer form{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+	
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+	
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+/* Firefox Keyframe Animation */
+/*
+@-moz-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 8px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+*/
+
+/* Webkit keyframe animation */
+/*
+@-webkit-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 10px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+*/
+
+#front{
+	padding-top: 130px;
+    text-align: center;
+	background:url('../img/front.jpg') no-repeat;
+	z-index:100;
+}
+
+#send{
+	background:url('../img/back.jpg') no-repeat;
+	z-index:1;
+	opacity:0;
+	
+	/* Rotating the recover password form by default */
+	-moz-transform:rotateY(180deg);
+	-webkit-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+}
+
+#formContainer.flipped #front{
+	
+	opacity:0;
+	
+	/**
+	 * Rotating the login form when the
+	 * flipped class is added to the container
+	 */
+	
+	-moz-transform:rotateY(-180deg);
+	-webkit-transform:rotateY(-180deg);
+	transform:rotateY(-180deg);
+}
+
+#formContainer.flipped #send{
+	
+	opacity:1;
+	
+	/* Rotating the recover div into view */
+	-moz-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+
+
+/*----------------------------
+	Inputs, Buttons &amp; Links
+-----------------------------*/
+
+
+#front .flipLink,
+#send .flipLink{
+	cursor: pointer;	
+    text-align: center;
+}
+
+
+input[type=text],textarea{
+	font: 15px 'Segoe UI',Arial,sans-serif;
+	border: none;
+	background:none;
+	height: 36px;
+	left: 26px;
+	position: absolute;
+	top: 176px;
+	width: 200px;
+	text-indent: 8px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	color:#000;
+	outline:none;
+}
+textarea{
+	height: 50px;
+	width: 408px;
+}
+
+input::-webkit-input-placeholder {
+    color:#ccc;
+}
+textarea::-webkit-input-placeholder {
+    color:#ccc;
+}
+
+#frontPass{
+	top: 215px;
+}
+
+
+#pcnm{
+	top:86px;
+	left:25px;
+}
+
+#pcem{
+	top:86px;
+	left:235px;
+}
+
+#pcmg{
+	top:130px;
+}
+
+input[type=submit]{
+	position:absolute;
+	top: 194px;
+	left: 24px;
+	width: 412px;
+	height: 36px;
+	cursor:pointer;
+
+    background-color: #54b948; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input[type=submit]:hover{
+	opacity:1;
+}
+
+
+
+
+.button {
+    background-color: #54b948; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button:hover {
+    background-color: #387c2c; /* Green */
+}
+
+#back{
+	position:absolute;
+	top: 234px;
+	left: 24px;
+	color: #ccc;
+}
+#bach a{
+	color: #fff;
+}
+
+
+
+
+/*----------------------------
+	The Footer
+-----------------------------*/
+
+
+footer{
+	background-color: #000;
+	bottom: 0;
+	height: 45px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100000;
+	color: #EEEEEE;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 13px 0 0;
+	margin: auto;
+	text-align: center;
+}
+footer img{
+	vertical-align: middle;
+	padding-left: 25px;
+}
