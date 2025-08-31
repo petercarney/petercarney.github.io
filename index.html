@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>petercarney.com</title>
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>    
+    <body>
+
+		<div id="formContainer">
+			<form id="front" method="post" action="./">
+				<p class="flipLink button">Contact Me</p>			</form>
+			<form id="send" method="post" action="emailform.php">
+				<input type="text" name="pcnm" id="pcnm" value="" placeholder="Name" />
+				<input type="text" name="pcem" id="pcem" value="" placeholder="Email" />
+				<textarea name="pcmg" id="pcmg" cols="60" rows="15" placeholder="Message..."></textarea>
+				<input type="checkbox" name="contact_me_by_phone_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+				<input type="submit" name="submit" id="submit" value="Send" />
+				<a href="#" id="back" class="flipLink">Back</a>
+			</form>
+		</div>
+
+        <footer>
+	        &copy;2025 petercarney.com
+	        <a href="https://www.linkedin.com/in/peter-carney-621a443" target="_blank">
+	          <img src="assets/img/btn_viewmy_160x25.png" width="160" height="25" border="0" alt="View Peter Carney's profile on LinkedIn">
+	        </a>
+        </footer>
+        
+        <!-- JavaScript includes -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="assets/js/script.js"></script>
+
+    </body>
+</html>
+
