@@ -49,7 +49,7 @@ $(function(){
 			'perspectiveProperty', 'WebkitPerspective', 'MozPerspective'
 		], testDom = document.createElement('a');
 		  
-		for(var i=0; i&lt;props.length; i++){
+		for(var i=0; i<props.length; i++){
 			if(props[i] in testDom.style){
 				return true;
 			}
